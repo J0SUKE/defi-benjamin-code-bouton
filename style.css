@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #deeaee;
+  height: 200px;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .button {
+  font-size: 1.3em;
+  font-weight: bold;
+  position: relative;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.container .button .ball {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  background: #000014;
+  border-radius: 25px;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  position: relative;
+}
+
+.container .button .ball .arrow {
+  position: absolute;
+  top: 50%;
+  left: calc(25px - 7.5px);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  height: 2px;
+  width: 15px;
+}
+
+.container .button .ball .arrow .line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translate(0, 0) scaleX(0);
+          transform: translate(0, 0) scaleX(0);
+  opacity: 0;
+  -webkit-transition: opacity .3s , -webkit-transform .3s;
+  transition: opacity .3s , -webkit-transform .3s;
+  transition: transform .3s , opacity .3s;
+  transition: transform .3s , opacity .3s , -webkit-transform .3s;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  height: 2px;
+  width: 15px;
+  background: white;
+}
+
+.container .button .ball .arrow .tip {
+  height: 8px;
+  width: 8px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  position: absolute;
+  bottom: 1px;
+  right: 0px;
+  -webkit-transform: translate(-4px, 0) rotate(-45deg);
+          transform: translate(-4px, 0) rotate(-45deg);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.container .button span {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  color: #000014;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.container .button:hover .ball {
+  width: 200px;
+}
+
+.container .button:hover .ball .tip {
+  -webkit-transform: translate(4px, 0) rotate(-45deg);
+          transform: translate(4px, 0) rotate(-45deg);
+}
+
+.container .button:hover .ball .line {
+  -webkit-transform: translate(2px, 0) scaleX(1);
+          transform: translate(2px, 0) scaleX(1);
+  opacity: 1;
+}
+
+.container .button:hover span {
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

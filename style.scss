@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  monospace;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container
+{
+    background: rgb(222, 234, 238);
+    height: 200px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .button{
+        font-size: 1.3em;
+        font-weight: bold;
+        position: relative;
+        height: 50px;
+        width: 200px;
+        cursor: pointer;
+        .ball{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 50px;
+            transform-origin: left;
+            background: rgb(0, 0, 20);
+            border-radius: 25px;
+            transition: width .3s;
+            position: relative;
+
+            .arrow{
+                position: absolute;
+                top: 50%;
+                left: calc(25px - 7.5px);
+                transform: translate(0,-50%);
+                height: 2px;
+                width: 15px;
+                .line
+                {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    transform: translate(0,0) scaleX(0);
+                    opacity: 0;
+                    transition: transform .3s , opacity .3s;
+                    transform-origin: center left;
+                    height: 2px;
+                    width: 15px;
+                    background: white;
+                }
+                .tip
+                {
+                    height: 8px;
+                    width: 8px;
+                    border-bottom:2px solid white;
+                    border-right:2px solid white;
+                    position: absolute;
+                    bottom: 1px;
+                    right: 0px;
+                    transform: translate(-4px,0) rotate(-45deg);
+                    transform-origin: bottom right;
+                    transition: transform .3s;
+                }
+            }
+        }
+        span{
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translate(0,-50%);
+            color: rgb(0, 0, 20);
+            transition: color .3s;
+        }
+
+        &:hover
+        {
+            .ball
+            {
+                width: 200px;
+                .tip
+                {
+                    transform: translate(4px,0) rotate(-45deg);   
+                }
+                .line
+                {
+                    transform: translate(2px,0) scaleX(1);
+                    opacity: 1;
+                }
+            }
+            span{
+                color: white;
+            }
+        }
+    }
+}
